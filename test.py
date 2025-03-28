@@ -3,7 +3,7 @@ from pytesseract import pytesseract
 import glob
 
 pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-image_paths = glob.glob("csv/*.png")
+image_paths = glob.glob("cropped/*.jpeg")
 songAuthor = []
 
 def clean_text(text):
@@ -38,12 +38,12 @@ def extract_song_artist_pairs(text):
 
 
 for i, path in enumerate(image_paths, 1):
-    print(f"\n-------- IMAGE {i} --------")
+    # print(f"\n-------- IMAGE {i} --------")
     text = extract_text(path)
     pairs = extract_song_artist_pairs(text)
     songAuthor.extend(pairs)  # Add to global list
-    for i, (song, artist) in enumerate(pairs, 1):
-        print(f"{i}. {song} - {artist}")
+    # for i, (song, artist) in enumerate(pairs, 1):
+    #     print(f"{i}. {song} - {artist}")
 
 # Save to text file
 # with open("output.txt", "w", encoding="utf-8") as f:

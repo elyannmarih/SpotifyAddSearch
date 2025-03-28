@@ -2,4 +2,5 @@
 .cache*
 __pycache__/
 *.png
+*.jpeg
 main.py
