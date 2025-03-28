@@ -20,29 +20,30 @@ def extract_text(image_path):
     return clean_text(text)
 
 def extract_song_artist_pairs(text):
-    # Divide el texto en líneas limpias e ignora líneas vacías
-    lines = [line.strip() for line in text.split("\n") if line.strip() != ""]
+    # Split the text into lines and remove empty ones
+    cleaned_lines = []
+    for line in text.split("\n"):
+        stripped_line = line.strip()
+        if stripped_line:
+            cleaned_lines.append(stripped_line)
 
-    # Agrupa cada dos líneas: [canción, artista]
+    # Group every two lines
     pairs = []
-    for i in range(0, len(lines) - 1, 2):  # -1 para evitar error si hay líneas impares
-        song = lines[i]
-        artist = lines[i + 1]
+    for i in range(0, len(cleaned_lines) - 1, 2):
+        song = cleaned_lines[i]
+        artist = cleaned_lines[i + 1]
         pairs.append([song, artist])
 
     return pairs
 
 
-for path in image_paths:
+for i, path in enumerate(image_paths, 1):
+    print(f"\n-------- IMAGE {i} --------")
     text = extract_text(path)
-    songAuthor.extend(extract_song_artist_pairs(text))
-
-    
-# Print results
-# for i, (song, artist) in enumerate(songAuthor, 1):
-#     print(f"{i}. {song} - {artist}")
-
-
+    pairs = extract_song_artist_pairs(text)
+    songAuthor.extend(pairs)  # Add to global list
+    for i, (song, artist) in enumerate(pairs, 1):
+        print(f"{i}. {song} - {artist}")
 
 # Save to text file
 # with open("output.txt", "w", encoding="utf-8") as f:
