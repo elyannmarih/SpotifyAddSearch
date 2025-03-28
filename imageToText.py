@@ -39,6 +39,7 @@ def extract_song_artist_pairs(text):
 
 
 for i, path in enumerate(image_paths, 1):
+    #Uncomment all in here if you want to see the text extracted by each image
     # print(f"\n-------- IMAGE {i} --------")
     text = extract_text(path)
     pairs = extract_song_artist_pairs(text)
@@ -46,7 +47,8 @@ for i, path in enumerate(image_paths, 1):
     # for i, (song, artist) in enumerate(pairs, 1):
     #     print(f"{i}. {song} - {artist}")
 
-# Save to text file
+
+# Uncomment this part if you want to save to text file
 # with open("output.txt", "w", encoding="utf-8") as f:
 #     for i, text in enumerate(all_texts):
 #         f.write(f"---------------- IMAGE {i+1} ----------------\n{text}\n\n")

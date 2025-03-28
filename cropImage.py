@@ -25,6 +25,13 @@ for i, path in enumerate(image_paths, 1):
 
     cropped = image.crop((left, top, right, bottom))
 
+#You can comment this if you dont want to see the cropImage first
+    print(f"Showing cropped area for image {i}: {path}")
+    cropped.show()
+
+    input("Press Enter to continue to next image...")
+####################################################################
+
     # Save cropped image
     filename = os.path.basename(path)
     cropped_path = os.path.join("cropped", filename)
