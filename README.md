@@ -43,7 +43,7 @@ python cropImage.py
 This will detect and pair each song and artist:
 
 ```bash
-python test.py
+python imageToText.py
 ```
 
 ### 3. Add songs to playlist
@@ -51,7 +51,7 @@ python test.py
 Run the main logic:
 
 ```bash
-python spotify.py
+python spotifyAPI.py
 ```
 
 - Step 1: Tries to find the song using song + artist.
@@ -64,5 +64,5 @@ python spotify.py
 If your playlist has duplicates, you can clean it with:
 
 ```bash
-python removeDuplicate.py
+python removeDuplicateSong.py
 ```
