@@ -1,0 +1,28 @@
+# Spotify Playlist Builder with OCR 🎵
+
+This Python project uses Tesseract OCR to extract song and artist names from images, and automatically adds them to a Spotify playlist.
+
+## Features
+
+- OCR image-to-text using Tesseract
+- Cleans and pairs song/artist info
+- Searches Spotify tracks
+- Adds them to an existing playlist (no duplicates)
+- Prompts for manual selection when uncertain
+
+## Setup
+
+1. Clone the repo
+2. Create a `.env` file with your Spotify credentials
+3. Place your images in the `csv/` folder
+4. Run the script
+
+## .env Example
+
+```env
+SPOTIPY_CLIENT_ID=your_client_id
+SPOTIPY_CLIENT_SECRET=your_client_secret
+SPOTIPY_REDIRECT_URI=http://localhost:8888/callback
+SPOTIPY_PLAYLIST_ID=your_playlist_id
+
+```
