@@ -22,7 +22,7 @@ This Python project uses Tesseract OCR to extract song and artist names from ima
    ```env
    SPOTIPY_CLIENT_ID=your_client_id
    SPOTIPY_CLIENT_SECRET=your_client_secret
-   SPOTIPY_REDIRECT_URI=http://localhost:8888/callback
+   SPOTIPY_REDIRECT_URI=http://127.0.0.1:8888/callback
    SPOTIPY_PLAYLIST_ID=your_playlist_id
    ```
 
