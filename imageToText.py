@@ -3,7 +3,8 @@ from pytesseract import pytesseract
 import glob
 
 pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-image_paths = glob.glob("cropped/*.jpeg")
+#image_paths = glob.glob("csv/*.jpeg") #folder if you don't use cropImage.py
+image_paths = glob.glob("cropped/*.jpeg") #folder if you use cropImage.py
 songAuthor = []
 
 def clean_text(text):

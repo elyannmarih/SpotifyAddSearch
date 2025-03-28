@@ -10,13 +10,14 @@ image_paths.sort()
 os.makedirs("cropped", exist_ok=True)
 
 for i, path in enumerate(image_paths, 1):
-    if i in [1, 2]:
-        continue
+   #Uncomment this if you dont want to crop an image (in here i did not crop the image 1 and 2):
+    #if i in [1, 2]:
+       #continue
 
     image = Image.open(path)
     width, height = image.size
 
-    # Adjust cropping box
+    # Adjust cropping 
     left = 150
     top = 180
     right = width - 100
