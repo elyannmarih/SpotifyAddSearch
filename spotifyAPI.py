@@ -2,7 +2,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
-from test import songAuthor
+from imageToText import songAuthor
 
 load_dotenv()
 CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
